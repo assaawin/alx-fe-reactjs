@@ -39,6 +39,38 @@ main p {
   text-align: center;
 }
 
+.user-profile {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 500px;
+  text-align: center;
+}
+
+.user-profile h2 {
+  color: #282c34;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.user-profile p {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #555;
+}
+
+.user-profile p:first-of-type {
+  color: #666;
+  font-weight: bold;
+}
+
+.user-profile p:last-of-type {
+  font-style: italic;
+  color: #777;
+}
+
 footer {
   background-color: #282c34;
   color: white;
