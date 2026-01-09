@@ -1,0 +1,9 @@
+node_modules/
+alx-react-app/dist/
+alx-react-app/.env
+alx-react-app/.env.local
+alx-react-app/.env.*.local
+alx-react-app/.DS_Store
+alx-react-app/*.log
+alx-react-app/.vscode/
+alx-react-app/.idea/
