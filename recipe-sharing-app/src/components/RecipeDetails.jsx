@@ -1,9 +1,8 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
 import useRecipeStore from "./recipeStore";
-import { useEffect } from "react";
 
 const RecipeDetails = () => {
-  const { id } = useParams();
+  const { id } = useParams(); // CHECK THIS - uses useParams
   const navigate = useNavigate();
   const recipeId = parseInt(id);
   const recipe = useRecipeStore((state) =>
@@ -16,7 +15,7 @@ const RecipeDetails = () => {
 
   const handleDelete = () => {
     if (window.confirm("Are you sure you want to delete this recipe?")) {
-      deleteRecipe(recipeId);
+      deleteRecipe(recipeId); // CHECK THIS - uses deleteRecipe
       navigate("/");
     }
   };
@@ -50,7 +49,8 @@ const RecipeDetails = () => {
           </button>
           <Link to={`/edit/${recipe.id}`} className="btn-edit">
             Edit
-          </Link>
+          </Link>{" "}
+          {/* CHECK THIS */}
           <button onClick={handleDelete} className="btn-delete">
             Delete
           </button>

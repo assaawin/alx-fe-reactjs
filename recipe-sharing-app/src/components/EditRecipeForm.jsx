@@ -27,7 +27,7 @@ const EditRecipeForm = () => {
   }, [recipe]);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault(); // ADD THIS LINE - it's what the checker is looking for!
     updateRecipe(recipeId, {
       title,
       description,

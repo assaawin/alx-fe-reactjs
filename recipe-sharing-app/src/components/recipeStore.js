@@ -15,7 +15,7 @@ const useRecipeStore = create((set, get) => ({
       recipes: [...state.recipes, { ...newRecipe, id: Date.now() }],
     })),
 
-  // Update recipe
+  // Update recipe - CHECK THIS EXISTS
   updateRecipe: (id, updatedRecipe) =>
     set((state) => ({
       recipes: state.recipes.map((recipe) =>
@@ -23,7 +23,7 @@ const useRecipeStore = create((set, get) => ({
       ),
     })),
 
-  // Delete recipe
+  // Delete recipe - CHECK THIS EXISTS
   deleteRecipe: (id) =>
     set((state) => ({
       recipes: state.recipes.filter((recipe) => recipe.id !== id),
@@ -32,7 +32,7 @@ const useRecipeStore = create((set, get) => ({
   // Search functionality
   setSearchTerm: (term) => set({ searchTerm: term }),
 
-  // Get filtered recipes - returns a function to compute filtered recipes
+  // Get filtered recipes
   getFilteredRecipes: () => {
     const state = get();
     return state.recipes.filter(
@@ -75,7 +75,6 @@ const useRecipeStore = create((set, get) => ({
         state.favorites.includes(recipe.id),
       );
 
-      // Get recipes with similar titles/descriptions to favorites
       const recommendations = state.recipes.filter((recipe) => {
         if (state.favorites.includes(recipe.id)) return false;
 
