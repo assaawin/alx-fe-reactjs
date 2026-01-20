@@ -7,7 +7,7 @@ import EditRecipeForm from "./components/EditRecipeForm";
 import SearchBar from "./components/SearchBar";
 import FavoritesList from "./components/FavoritesList";
 import RecommendationsList from "./components/RecommendationsList";
-import useRecipeStore from "./store/recipeStore";
+import useRecipeStore from "./components/recipeStore";
 import "./App.css";
 
 function App() {
