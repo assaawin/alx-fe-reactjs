@@ -1,27 +1,43 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import SearchBar from "./components/SearchBar";
+import UserList from "./components/UserList";
+import { searchUsers } from "./services/githubApi";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [users, setUsers] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleSearch = async (query) => {
+    setIsLoading(true);
+    setError(null);
+
+    try {
+      const data = await searchUsers(query);
+      setUsers(data.items || []);
+    } catch (err) {
+      setError(err.message || "Failed to fetch users");
+      setUsers([]);
+    } finally {
+      setIsLoading(false);
+    }
+  };
 
   return (
     <div className="App">
       <header className="App-header">
         <h1>GitHub User Search</h1>
-        <p>
-          Application setup complete! Ready to build the GitHub User Search App.
-        </p>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test HMR
-          </p>
+        <p className="subtitle">Search for GitHub users by username</p>
+
+        <SearchBar onSearch={handleSearch} />
+
+        <UserList users={users} isLoading={isLoading} error={error} />
+
+        <div className="instructions">
+          <p>Enter a username to search for GitHub users</p>
+          <p className="hint">Example: octocat, torvalds, etc.</p>
         </div>
-        <p className="read-the-docs">
-          Next steps: Create search component and integrate GitHub API
-        </p>
       </header>
     </div>
   );

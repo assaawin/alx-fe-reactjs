@@ -38,16 +38,4 @@ export const getUserProfile = async (username) => {
   }
 };
 
-export const getUserRepos = async (username) => {
-  try {
-    const response = await githubApi.get(
-      `/users/${username}/repos?sort=updated&per_page=10`,
-    );
-    return response.data;
-  } catch (error) {
-    console.error("Error fetching user repos:", error);
-    throw error;
-  }
-};
-
 export default githubApi;
