@@ -1,44 +1,40 @@
-import React, { useState } from "react";
-import SearchBar from "./components/SearchBar";
-import UserList from "./components/UserList";
-import { searchUsers } from "./services/githubApi";
+import React from "react";
+import Search from "./components/Search";
 import "./App.css";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-
-  const handleSearch = async (query) => {
-    setIsLoading(true);
-    setError(null);
-
-    try {
-      const data = await searchUsers(query);
-      setUsers(data.items || []);
-    } catch (err) {
-      setError(err.message || "Failed to fetch users");
-      setUsers([]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>GitHub User Search</h1>
-        <p className="subtitle">Search for GitHub users by username</p>
+      <div className="app-container">
+        <header className="app-header">
+          <h1 className="app-title">GitHub User Search</h1>
+          <p className="app-description">
+            Search for any GitHub user and view their profile information
+          </p>
+        </header>
 
-        <SearchBar onSearch={handleSearch} />
+        <main className="app-main">
+          <Search />
+        </main>
 
-        <UserList users={users} isLoading={isLoading} error={error} />
-
-        <div className="instructions">
-          <p>Enter a username to search for GitHub users</p>
-          <p className="hint">Example: octocat, torvalds, etc.</p>
-        </div>
-      </header>
+        <footer className="app-footer">
+          <p>
+            Built with React & GitHub API •
+            <a
+              href="https://github.com/AbubakariIssah/alx-fe-reactjs/tree/main/github-user-search"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="footer-link"
+            >
+              View Source Code
+            </a>
+          </p>
+          <p className="footer-note">
+            Note: GitHub API has rate limits. Add a personal access token for
+            higher limits.
+          </p>
+        </footer>
+      </div>
     </div>
   );
 }
