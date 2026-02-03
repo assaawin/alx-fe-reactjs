@@ -3,156 +3,187 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-4 sm:py-6 md:py-8">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-gray-100 py-8">
       <div className="container mx-auto px-4">
-        <header className="text-center mb-8 sm:mb-10 md:mb-12">
-          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-800 mb-2 sm:mb-3 md:mb-4">
-            Task 3: Responsive UserProfile Component
+        <header className="text-center mb-12">
+          <h1 className="text-3xl font-bold text-gray-800 mb-4">
+            Task 4: Interactive UserProfile Component
           </h1>
-          <p className="text-gray-600 text-sm sm:text-base md:text-base max-w-2xl mx-auto">
-            This component demonstrates responsive design using Tailwind CSS
-            utility classes. Resize your browser or use device emulation to see
-            how the component adapts to different screen sizes.
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            This component demonstrates interactive hover effects and smooth
+            transitions using Tailwind CSS. Hover over different elements to see
+            the effects.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 gap-6 sm:gap-8">
-          {/* Responsive component display */}
-          <div className="flex flex-col items-center">
-            <div className="mb-4 sm:mb-6 md:mb-8 p-3 sm:p-4 bg-blue-100 rounded-lg">
-              <h2 className="text-base sm:text-lg md:text-xl font-semibold text-blue-800 mb-2">
-                Responsive UserProfile Component
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+          {/* Interactive component */}
+          <div className="md:col-span-1">
+            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                Interactive Demo
               </h2>
-              <p className="text-xs sm:text-sm md:text-base text-blue-700">
-                Watch how the component changes at different breakpoints:
+              <p className="text-gray-600 mb-4">
+                Hover over the following elements to see effects:
               </p>
-            </div>
-            <UserProfile />
-          </div>
-
-          {/* Responsive breakpoints explanation */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6">
-            {/* Mobile (sm) */}
-            <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 border-l-4 border-red-500">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 mb-2">
-                📱 Mobile (Small)
-              </h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3">
-                Screens smaller than 640px
-              </p>
-              <ul className="space-y-1 text-xs sm:text-sm text-gray-600">
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-1 mr-2"></span>
-                  Padding: p-4
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-1 mr-2"></span>
-                  Max-width: max-w-xs
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-1 mr-2"></span>
-                  Image: w-24 h-24
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-1 mr-2"></span>
-                  Heading: text-lg
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-1 mr-2"></span>
-                  Paragraph: text-sm
-                </li>
-              </ul>
-            </div>
-
-            {/* Tablet (md) */}
-            <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 border-l-4 border-yellow-500">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 mb-2">
-                📟 Tablet (Medium)
-              </h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3">
-                Screens 768px and larger
-              </p>
-              <ul className="space-y-1 text-xs sm:text-sm text-gray-600">
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-1 mr-2"></span>
-                  Padding: md:p-8
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-1 mr-2"></span>
-                  Max-width: md:max-w-sm
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-1 mr-2"></span>
-                  Image: md:w-36 md:h-36
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-1 mr-2"></span>
-                  Heading: md:text-xl
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-yellow-500 rounded-full mt-1 mr-2"></span>
-                  Paragraph: md:text-base
-                </li>
-              </ul>
-            </div>
-
-            {/* Desktop (lg+) */}
-            <div className="bg-white rounded-lg shadow-md p-4 sm:p-5 md:p-6 border-l-4 border-green-500">
-              <h3 className="text-sm sm:text-base md:text-lg font-semibold text-gray-700 mb-2">
-                💻 Desktop (Large+)
-              </h3>
-              <p className="text-xs sm:text-sm md:text-base text-gray-600 mb-3">
-                Screens 1024px and larger
-              </p>
-              <ul className="space-y-1 text-xs sm:text-sm text-gray-600">
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-1 mr-2"></span>
-                  Maintains tablet styles
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-1 mr-2"></span>
-                  Centered layout
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-1 mr-2"></span>
-                  Optimal reading width
-                </li>
-                <li className="flex items-start">
-                  <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-1 mr-2"></span>
-                  Enhanced visual hierarchy
-                </li>
-              </ul>
+              <UserProfile />
             </div>
           </div>
 
-          {/* Responsive Test Instructions */}
-          <div className="mt-6 sm:mt-8 md:mt-10 bg-blue-50 border border-blue-200 rounded-lg p-4 sm:p-5 md:p-6">
-            <h3 className="text-base sm:text-lg md:text-xl font-semibold text-blue-800 mb-3">
-              How to Test Responsive Design
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <h4 className="text-sm sm:text-base font-medium text-blue-700 mb-2">
-                  Browser Developer Tools:
-                </h4>
-                <ol className="text-xs sm:text-sm text-blue-600 space-y-1 pl-4 list-decimal">
-                  <li>Right-click and select "Inspect"</li>
-                  <li>Click the device toggle icon (📱)</li>
-                  <li>Choose different device presets</li>
-                  <li>Resize the viewport manually</li>
-                </ol>
+          {/* Effects explanation */}
+          <div className="md:col-span-1">
+            <div className="bg-white rounded-lg shadow-md p-6 mb-6">
+              <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                Applied Hover Effects
+              </h2>
+
+              <div className="space-y-6">
+                {/* Profile Image Effect */}
+                <div className="border-l-4 border-blue-500 pl-4">
+                  <h3 className="text-lg font-medium text-gray-800 mb-2">
+                    Profile Image Hover
+                  </h3>
+                  <div className="flex items-start space-x-3">
+                    <div className="w-16 h-16 rounded-full bg-gray-200 flex items-center justify-center hover:scale-110 transition-transform duration-300 ease-in-out">
+                      <span className="text-sm">Hover</span>
+                    </div>
+                    <div>
+                      <p className="text-gray-600 mb-1">
+                        <code className="text-sm bg-blue-50 px-2 py-1 rounded">
+                          hover:scale-110
+                        </code>
+                      </p>
+                      <p className="text-gray-600 mb-1">
+                        <code className="text-sm bg-blue-50 px-2 py-1 rounded">
+                          transition-transform
+                        </code>
+                      </p>
+                      <p className="text-gray-600 mb-1">
+                        <code className="text-sm bg-blue-50 px-2 py-1 rounded">
+                          duration-300
+                        </code>
+                      </p>
+                      <p className="text-gray-600">
+                        <code className="text-sm bg-blue-50 px-2 py-1 rounded">
+                          ease-in-out
+                        </code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Heading Effect */}
+                <div className="border-l-4 border-green-500 pl-4">
+                  <h3 className="text-lg font-medium text-gray-800 mb-2">
+                    Heading Color Change
+                  </h3>
+                  <div className="flex items-center space-x-4">
+                    <div className="text-lg font-medium text-blue-800 hover:text-blue-500 transition-colors duration-300 ease-in-out cursor-pointer">
+                      Hover over me
+                    </div>
+                    <div>
+                      <p className="text-gray-600 mb-1">
+                        <code className="text-sm bg-green-50 px-2 py-1 rounded">
+                          hover:text-blue-500
+                        </code>
+                      </p>
+                      <p className="text-gray-600">
+                        <code className="text-sm bg-green-50 px-2 py-1 rounded">
+                          transition-colors
+                        </code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Card Shadow Effect */}
+                <div className="border-l-4 border-purple-500 pl-4">
+                  <h3 className="text-lg font-medium text-gray-800 mb-2">
+                    Enhanced Card Shadow
+                  </h3>
+                  <div className="flex items-center space-x-4">
+                    <div className="w-32 h-20 bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 ease-in-out flex items-center justify-center cursor-pointer">
+                      <span className="text-sm">Hover me</span>
+                    </div>
+                    <div>
+                      <p className="text-gray-600 mb-1">
+                        <code className="text-sm bg-purple-50 px-2 py-1 rounded">
+                          hover:shadow-xl
+                        </code>
+                      </p>
+                      <p className="text-gray-600">
+                        <code className="text-sm bg-purple-50 px-2 py-1 rounded">
+                          transition-shadow
+                        </code>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h4 className="text-sm sm:text-base font-medium text-blue-700 mb-2">
-                  Observe These Changes:
-                </h4>
-                <ul className="text-xs sm:text-sm text-blue-600 space-y-1 pl-4 list-disc">
-                  <li>Container padding and max-width</li>
-                  <li>Image size changes</li>
-                  <li>Typography scaling</li>
-                  <li>Layout adjustments</li>
-                </ul>
+            </div>
+
+            {/* Transition timing chart */}
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h2 className="text-xl font-semibold text-gray-700 mb-4">
+                Transition Timing
+              </h2>
+              <div className="space-y-4">
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm text-gray-600">duration-300</span>
+                    <span className="text-sm text-gray-600">300ms</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2">
+                    <div className="bg-blue-600 h-2 rounded-full w-full"></div>
+                  </div>
+                </div>
+                <div>
+                  <div className="flex justify-between mb-1">
+                    <span className="text-sm text-gray-600">ease-in-out</span>
+                    <span className="text-sm text-gray-600">
+                      Slow start & end
+                    </span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 relative">
+                    <div className="absolute top-0 left-0 w-full h-2 flex">
+                      <div className="bg-gradient-to-r from-blue-400 via-blue-600 to-blue-400 h-2 rounded-full w-full"></div>
+                    </div>
+                  </div>
+                </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Instructions */}
+        <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
+          <h3 className="text-lg font-semibold text-blue-800 mb-3">
+            Expected Interactions
+          </h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-medium text-blue-700 mb-2">Image Hover:</h4>
+              <ul className="text-sm text-blue-600 space-y-1">
+                <li>• Slight scale increase (110%)</li>
+                <li>• Smooth transformation</li>
+                <li>• 300ms duration</li>
+              </ul>
+            </div>
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-medium text-blue-700 mb-2">Heading Hover:</h4>
+              <ul className="text-sm text-blue-600 space-y-1">
+                <li>• Color change to blue-500</li>
+                <li>• Smooth color transition</li>
+                <li>• 300ms duration</li>
+              </ul>
+            </div>
+            <div className="bg-white p-4 rounded-lg">
+              <h4 className="font-medium text-blue-700 mb-2">Card Hover:</h4>
+              <ul className="text-sm text-blue-600 space-y-1">
+                <li>• Enhanced shadow (shadow-xl)</li>
+                <li>• Smooth shadow transition</li>
+                <li>• Lifting effect</li>
+              </ul>
             </div>
           </div>
         </div>
