@@ -1,48 +1,52 @@
 import React from 'react';
 import AdvancedSearch from './components/AdvancedSearch.jsx';
-import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <div className="app-container">
+    <div className="min-h-screen bg-github-dark">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <header className="app-header">
-          <div className="text-center">
-            <h1 className="app-title">GitHub User Search</h1>
-            <p className="app-description">
+        <header className="text-center py-8 border-b border-github-dark-border mb-8">
+          <div className="flex flex-col items-center space-y-4">
+            <div className="flex items-center space-x-3">
+              <span className="text-5xl">🐙</span>
+              <h1 className="text-4xl font-bold bg-gradient-to-r from-github-blue to-blue-700 bg-clip-text text-transparent">
+                GitHub User Search
+              </h1>
+            </div>
+            <p className="text-github-dark-muted text-lg max-w-2xl">
               Advanced search with location filtering, repository counts, and detailed user profiles
             </p>
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem', marginTop: '0.5rem' }}>
+            <div className="flex items-center space-x-2 text-sm text-github-dark-muted">
               <span>💻</span>
-              <span style={{ fontSize: '0.875rem', color: '#8b949e' }}>Powered by GitHub API</span>
+              <span>Powered by GitHub API</span>
             </div>
           </div>
         </header>
         
         {/* Main Content */}
-        <main className="app-main">
+        <main className="pb-8">
           <AdvancedSearch />
         </main>
         
         {/* Footer */}
-        <footer className="app-footer">
-          <div>
+        <footer className="text-center py-6 border-t border-github-dark-border mt-8 text-github-dark-muted text-sm">
+          <div className="space-y-2">
             <p>
-              Built with React & GitHub API •
+              Built with React, Tailwind CSS & GitHub API •
               <a 
                 href="https://github.com/AbubakariIssah/alx-fe-reactjs/tree/main/github-user-search" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="footer-link"
+                className="text-github-blue hover:underline ml-1"
               >
                 View Source Code
               </a>
             </p>
-            <p className="footer-note">
+            <p className="text-xs italic">
               Note: GitHub API has rate limits. For higher limits, add a personal access token in .env file
             </p>
-            <p style={{ fontSize: '0.75rem', color: '#8b949e', marginTop: '0.5rem' }}>
+            <p className="text-xs text-github-dark-muted">
               Task 2: Advanced Search Features • ALX Frontend ReactJS
             </p>
           </div>

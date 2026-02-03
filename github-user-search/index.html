@@ -4,7 +4,37 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>github-user-search</title>
+    <title>GitHub User Search</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              github: {
+                dark: '#0d1117',
+                'dark-border': '#30363d',
+                'dark-card': '#161b22',
+                'dark-text': '#c9d1d9',
+                'dark-muted': '#8b949e',
+                blue: '#58a6ff',
+                green: '#238636',
+                'green-hover': '#2ea043',
+                red: '#f85149',
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      body {
+        background-color: #0d1117;
+        color: #c9d1d9;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
