@@ -1,0 +1,38 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "summary": "A classic Italian pasta dish with eggs, cheese, bacon, and black pepper.",
+    "image": "https://images.unsplash.com/photo-1551892374-ecf2eedf1d4a"
+  },
+  {
+    "id": 2,
+    "title": "Chicken Tikka Masala",
+    "summary": "Tender chicken in a rich, creamy tomato sauce with aromatic spices.",
+    "image": "https://images.unsplash.com/photo-1565557623262-b51c2513a641"
+  },
+  {
+    "id": 3,
+    "title": "Avocado Toast",
+    "summary": "Smashed avocado on sourdough bread with cherry tomatoes and poached eggs.",
+    "image": "https://images.unsplash.com/photo-1541519227354-08fa5d50c44d"
+  },
+  {
+    "id": 4,
+    "title": "Beef Stir Fry",
+    "summary": "Quick and flavorful beef with colorful vegetables and savory sauce.",
+    "image": "https://images.unsplash.com/photo-1512058564363-6c6f2c4e2e2e"
+  },
+  {
+    "id": 5,
+    "title": "Margherita Pizza",
+    "summary": "Fresh basil, mozzarella, and tomato sauce on a crispy thin crust.",
+    "image": "https://images.unsplash.com/photo-1604068549290-dea0e4a305ca"
+  },
+  {
+    "id": 6,
+    "title": "Chocolate Brownies",
+    "summary": "Fudgy, rich chocolate brownies with a crackly top.",
+    "image": "https://images.unsplash.com/photo-1606313564200-e75d5e304502"
+  }
+]
