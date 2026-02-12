@@ -13,13 +13,23 @@ const HomePage = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <header className="bg-emerald-600 text-white py-12">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-5xl font-bold mb-4">
-            🍳 Recipe Sharing Platform
-          </h1>
-          <p className="text-xl text-emerald-100">
-            Discover, share, and cook amazing recipes
-          </p>
+        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between">
+          <div className="text-center md:text-left mb-6 md:mb-0">
+            <h1 className="text-5xl font-bold mb-4">
+              🍳 Recipe Sharing Platform
+            </h1>
+            <p className="text-xl text-emerald-100">
+              Discover, share, and cook amazing recipes
+            </p>
+          </div>
+
+          <a
+            href="/add-recipe"
+            className="bg-white text-emerald-700 hover:bg-emerald-50 font-semibold px-8 py-4 rounded-2xl text-lg transition-all flex items-center gap-3 shadow-lg"
+          >
+            <span className="text-2xl">+</span>
+            Add New Recipe
+          </a>
         </div>
       </header>
 
