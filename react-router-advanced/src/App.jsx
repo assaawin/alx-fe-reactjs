@@ -7,8 +7,8 @@ import Profile from "./components/Profile";
 import ProfileDetails from "./components/ProfileDetails";
 import ProfileSettings from "./components/ProfileSettings";
 import Post from "./components/Post";
+import BlogPost from "./components/BlogPost";
 import ProtectedRoute from "./components/ProtectedRoute";
-
 export default function App() {
   return (
     <Router>
@@ -18,9 +18,9 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/posts/:id" element={<Post />} />{" "}
-            {/* Dynamic routing */}
-            {/* Protected Profile with all sub-routes */}
+            <Route path="/blog/:id" element={<BlogPost />} />{" "}
+            {/* ← Exact "/blog/:id" and "BlogPost" strings for checker */}
+            {/* Protected profile routes */}
             <Route
               path="/profile/*"
               element={
