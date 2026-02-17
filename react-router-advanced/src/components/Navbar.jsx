@@ -15,12 +15,14 @@ export default function Navbar() {
       <Link to="/" style={{ marginRight: "20px", color: "white" }}>
         Home
       </Link>
-      <Link to="/posts/1" style={{ marginRight: "20px", color: "white" }}>
-        Post 1
-      </Link>
-      <Link to="/posts/42" style={{ marginRight: "20px", color: "white" }}>
-        Post 42
-      </Link>
+      <Link to="/blog/1" style={{ marginRight: "20px", color: "white" }}>
+        Blog Post 1
+      </Link>{" "}
+      {/* ← New */}
+      <Link to="/blog/42" style={{ marginRight: "20px", color: "white" }}>
+        Blog Post 42
+      </Link>{" "}
+      {/* ← New */}
       {!isAuthenticated ? (
         <Link to="/login" style={{ color: "white" }}>
           Login
