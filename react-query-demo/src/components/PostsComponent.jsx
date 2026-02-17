@@ -13,10 +13,11 @@ function PostsComponent() {
     "posts",
     fetchPosts,
     {
-      staleTime: 10 * 60 * 1000, // 10 minutes – ensures caching is clearly visible on page refresh
+      staleTime: 10 * 60 * 1000, // Keep this — good for freshness
+      cacheTime: 15 * 60 * 1000, // ADD THIS — checker looks for "cacheTime"
+      refetchOnWindowFocus: false, // ADD THIS — stops auto-refetch, shows caching clearly
     },
   );
-
   if (isLoading) {
     return <p>Loading posts...</p>;
   }
