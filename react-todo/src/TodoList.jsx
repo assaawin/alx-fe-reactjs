@@ -1,4 +1,6 @@
 import { useState } from "react";
+import AddTodoForm from "./components/AddTodoForm";
+import TodoItem from "./components/TodoItem";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([
@@ -7,15 +9,8 @@ export default function TodoList() {
     { id: 3, text: "Write Tests", completed: true },
   ]);
 
-  const [inputValue, setInputValue] = useState("");
-
-  const addTodo = () => {
-    if (inputValue.trim() === "") return;
-    setTodos([
-      ...todos,
-      { id: Date.now(), text: inputValue, completed: false },
-    ]);
-    setInputValue("");
+  const addTodo = (text) => {
+    setTodos([...todos, { id: Date.now(), text, completed: false }]);
   };
 
   const toggleTodo = (id) => {
@@ -33,56 +28,18 @@ export default function TodoList() {
   return (
     <div style={{ maxWidth: "600px", margin: "0 auto", padding: "20px" }}>
       <h1>My Todo List</h1>
-
-      <div style={{ marginBottom: "20px" }}>
-        <input
-          type="text"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)}
-          placeholder="Add a new todo"
-          onKeyDown={(e) => e.key === "Enter" && addTodo()}
-          style={{ padding: "10px", width: "70%" }}
-        />
-        <button
-          onClick={addTodo}
-          style={{ padding: "10px 20px", marginLeft: "10px" }}
-        >
-          Add Todo
-        </button>
-      </div>
-
+      <AddTodoForm onAddTodo={addTodo} />
       <ul style={{ listStyle: "none", padding: 0 }}>
         {todos.map((todo) => (
-          <li
+          <TodoItem
             key={todo.id}
-            style={{
-              padding: "10px",
-              marginBottom: "10px",
-              background: "#f9f9f9",
-              display: "flex",
-              justifyContent: "space-between",
-              alignItems: "center",
-              textDecoration: todo.completed ? "line-through" : "none",
-              opacity: todo.completed ? 0.6 : 1,
-            }}
-          >
-            <span
-              onClick={() => toggleTodo(todo.id)}
-              style={{ cursor: "pointer" }}
-            >
-              {todo.text}
-            </span>
-            <button
-              onClick={() => deleteTodo(todo.id)}
-              style={{ color: "red" }}
-            >
-              Delete
-            </button>
-          </li>
+            todo={todo}
+            onToggle={toggleTodo}
+            onDelete={deleteTodo}
+          />
         ))}
       </ul>
-
-      {todos.length === 0 && <p>No todos yet! Add one above.</p>}
+      {todos.length === 0 && <p>No todos yet!</p>}
     </div>
   );
 }
