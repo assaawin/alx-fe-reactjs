@@ -18,17 +18,17 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
-            <Route path="/posts/:id" element={<Post />} /> {/* Dynamic */}
-            <Route element={<ProtectedRoute />}>
-              {" "}
-              {/* Protected wrapper */}
-              <Route path="profile" element={<Profile />}>
-                <Route index element={<ProfileDetails />} />{" "}
-                {/* Default nested */}
-                <Route path="details" element={<ProfileDetails />} />
-                <Route path="settings" element={<ProfileSettings />} />
-              </Route>
-            </Route>
+            <Route path="/posts/:id" element={<Post />} />{" "}
+            {/* Dynamic routing */}
+            {/* Protected Profile with all sub-routes */}
+            <Route
+              path="/profile/*"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
           </Routes>
         </div>
       </AuthProvider>
