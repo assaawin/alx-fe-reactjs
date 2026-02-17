@@ -1,6 +1,5 @@
 import { useState } from "react";
 import AddTodoForm from "./components/AddTodoForm";
-import TodoItem from "./components/TodoItem";
 
 export default function TodoList() {
   const [todos, setTodos] = useState([
@@ -31,15 +30,37 @@ export default function TodoList() {
       <AddTodoForm onAddTodo={addTodo} />
       <ul style={{ listStyle: "none", padding: 0 }}>
         {todos.map((todo) => (
-          <TodoItem
+          <li
             key={todo.id}
-            todo={todo}
-            onToggle={toggleTodo}
-            onDelete={deleteTodo}
-          />
+            style={{
+              padding: "10px",
+              marginBottom: "10px",
+              background: "#f9f9f9",
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+            }}
+          >
+            <span
+              onClick={() => toggleTodo(todo.id)}
+              style={{
+                cursor: "pointer",
+                textDecoration: todo.completed ? "line-through" : "none",
+                opacity: todo.completed ? 0.6 : 1,
+              }}
+            >
+              {todo.text}
+            </span>
+            <button
+              onClick={() => deleteTodo(todo.id)}
+              style={{ color: "red" }}
+            >
+              Delete
+            </button>
+          </li>
         ))}
       </ul>
-      {todos.length === 0 && <p>No todos yet!</p>}
+      {todos.length === 0 && <p>No todos yet! Add one above.</p>}
     </div>
   );
 }

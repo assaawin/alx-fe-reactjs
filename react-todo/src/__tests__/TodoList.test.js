@@ -12,7 +12,7 @@ describe("TodoList Component", () => {
   test("adds a new todo", () => {
     render(<TodoList />);
     const input = screen.getByPlaceholderText("Add a new todo");
-    const button = screen.getByRole("button", { name: /add todo/i });
+    const button = screen.getByRole("button", { name: "Add Todo" });
 
     fireEvent.change(input, { target: { value: "New Todo" } });
     fireEvent.click(button);
@@ -20,15 +20,14 @@ describe("TodoList Component", () => {
     expect(screen.getByText("New Todo")).toBeInTheDocument();
   });
 
-  test("toggles a todo completion", () => {
+  test("toggles a todo completion by clicking text", () => {
     render(<TodoList />);
-    const checkbox = screen.getAllByRole("checkbox")[0]; // First todo checkbox
-
-    fireEvent.click(checkbox);
     const todoText = screen.getByText("Learn React");
+
+    fireEvent.click(todoText);
     expect(todoText).toHaveStyle("text-decoration: line-through");
 
-    fireEvent.click(checkbox);
+    fireEvent.click(todoText);
     expect(todoText).not.toHaveStyle("text-decoration: line-through");
   });
 
